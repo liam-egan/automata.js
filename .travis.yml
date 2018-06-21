@@ -5,6 +5,8 @@ node_js:
 script:
   - npm run test
   - npm run build
+after_success:
+  - tasks/after_success.sh
 
 deploy:
   provider: pages
