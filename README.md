@@ -1,6 +1,6 @@
 # automata.js
 
-[![MIT License][license-badge]][license]
+[![MIT License][license-badge]][license][![Build Status][travis-badge]][travis]
 
 A minimal JavaScript library for creating and manipulating cellular automata
 
@@ -56,4 +56,6 @@ Documentation for this library can be found on the [GitHub Pages][docs-url]
 [yarn]: https://yarnpkg.com/
 [license]: https://github.com/liam-egan/automata.js/blob/master/LICENSE
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[travis]: https://travis-ci.org/liam-egan/automata.js
+[travis-badge]: https://travis-ci.org/liam-egan/automata.js.svg?branch=master
 [jsdelivr]: https://www.jsdelivr.com/
