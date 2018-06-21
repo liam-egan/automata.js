@@ -9,10 +9,11 @@ after_success:
   - npm run docs
 
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
-  target-branch: master
-  on:
-    branch: master
+  - provider: pages
+    local-dir: docs/
+    skip-cleanup: true
+    github-token: $GH_TOKEN
+    keep-history: true
+    target-branch: gh-pages
+    on:
+      branch: master
