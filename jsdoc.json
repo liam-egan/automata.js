@@ -8,5 +8,8 @@
     "recurse": true,
     "template": "./node_modules/loke-jsdoc-theme"
   },
-  "plugins": ["plugins/markdown"]
+  "plugins": ["plugins/markdown"],
+  "markdown": {
+    "tags": ["example"]
+  }
 }
