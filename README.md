@@ -1,3 +1,3 @@
 # automata.js
 
-A JavaScript library for creating and manipulating cellular automata
+A minimal JavaScript library for creating and manipulating cellular automata

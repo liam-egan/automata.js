@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Automata - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Automata.html">Automata</a><ul class='methods'><li data-type='method'><a href="module-Automata.html#.Automaton">Automaton</a></li><li data-type='method'><a href="module-Automata.html#.Cell">Cell</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Automata</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+
+<section>
+
+
+
+<header data-tmpl="container.tmpl">
+    
+      <h2>Module: Automata</h2>
+        
+    
+
+    
+      <div class="bs-callout bs-callout-default">
+        <h5>Members</h5>
+        <br />
+        <dl class="dl-horizontal methods-members">
+        <dt>Methods</dt><dd><ul>
+            <li><a href="#Automaton">Automaton</a></li>
+            
+            <li><a href="#Cell">Cell</a></li>
+            </ul></dd></dl></div>
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="automaton.js.html">automaton.js</a>:<a href="automaton.js.html#line63">63</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".Automaton">
+      <a href="#params-Automaton"><span class="type-signature">(static) </span>Automaton</a><span class="signature">(options)</span><span class="type-signature"> &rarr; {Automaton}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Produces an automaton with the desired options</p>
+</div>
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>const a = automata.Automaton({
+  produceNextCellState: () => true,
+  width: 10,
+  height: 10
+})</code></pre>
+
+    <pre class="prettyprint"><code>const a = automata.Automaton({
+  produceNextCellState: () => true,
+  cells: [[automata.Cell(false)]]
+})</code></pre>
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-Automaton">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-Automaton" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The options</p>
+                <h6>Properties</h6>
+                <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>produceNextCellState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">NextCellFunction</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Function which is
+applied to each of the cells in the grid and produces the next state of each
+cell</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    1
+                
+                </td>
+            
+
+            <td class="description last"><p>The width of the grid to create. Useless if
+cells is also present</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    1
+                
+                </td>
+            
+
+            <td class="description last"><p>The height of the grid to create. Useless
+if cells is also present</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cells</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array.&lt;Cell>></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Predefined array of cells.
+Defaults to an array of given width and height</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-danger">
+    <h5>Throws</h5>
+    
+<dl class="dl-horizontal">
+
+            <dt>
+              
+                
+<span class="param-type">TypeError</span>
+
+
+              
+            </dt>
+            <dd>
+              
+                <p>If produceNextCellState is missing</p>
+              
+            </dd>
+            
+</dl>
+
+  </div>
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Automaton</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Produces an automaton with the desired options\n * @memberof module:Automata\n * @param {Object} options The options\n * @param {NextCellFunction} options.produceNextCellState Function which is\n * applied to each of the cells in the grid and produces the next state of each\n * cell\n * @param {number} [options.width=1] The width of the grid to create. Useless if\n * cells is also present\n * @param {number} [options.height=1] The height of the grid to create. Useless\n * if cells is also present\n * @param {Array<Array<Cell>>} [options.cells] Predefined array of cells.\n * Defaults to an array of given width and height\n * @throws {TypeError} If produceNextCellState is missing\n * @return {Automaton}\n *\n * @example\n * const a = automata.Automaton({\n *   produceNextCellState: () => true,\n *   width: 10,\n *   height: 10\n * })\n *\n * @example\n * const a = automata.Automaton({\n *   produceNextCellState: () => true,\n *   cells: [[automata.Cell(false)]]\n * })\n */","meta":{"range":[1915,2686],"filename":"automaton.js","lineno":63,"columnno":0,"path":"/home/liam/dev/proj/automata.js/src","code":{"id":"astnode100000018","name":"Automaton","type":"FunctionDeclaration","paramnames":["options"]},"vars":{"undefined":null,"cells":"module:Automata.Automaton~cells","":null,"next":"module:Automata.Automaton~next"},"shortpath":"automaton.js"},"description":"<p>Produces an automaton with the desired options</p>","memberof":"module:Automata","params":[{"type":{"names":["Object"]},"description":"<p>The options</p>","name":"options","subparams":[{"type":{"names":["NextCellFunction"]},"description":"<p>Function which is\napplied to each of the cells in the grid and produces the next state of each\ncell</p>","name":"produceNextCellState"},{"type":{"names":["number"]},"optional":true,"defaultvalue":1,"description":"<p>The width of the grid to create. Useless if\ncells is also present</p>","name":"width"},{"type":{"names":["number"]},"optional":true,"defaultvalue":1,"description":"<p>The height of the grid to create. Useless\nif cells is also present</p>","name":"height"},{"type":{"names":["Array.<Array.<Cell>>"]},"optional":true,"description":"<p>Predefined array of cells.\nDefaults to an array of given width and height</p>","name":"cells"}]},null,null,null,null],"exceptions":[{"type":{"names":["TypeError"]},"description":"<p>If produceNextCellState is missing</p>"}],"returns":[{"type":{"names":["Automaton"]}}],"examples":[{"caption":"","code":"const a = automata.Automaton({\n  produceNextCellState: () => true,\n  width: 10,\n  height: 10\n})"},{"caption":"","code":"const a = automata.Automaton({\n  produceNextCellState: () => true,\n  cells: [[automata.Cell(false)]]\n})"}],"name":"Automaton","longname":"module:Automata.Automaton","kind":"function","scope":"static","___id":"T000002R000008","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".Automaton","signature":"<span class=\"signature\">(options)</span><span class=\"type-signature\"> &rarr; {Automaton}</span>","ancestors":["<a href=\"module-Automata.html\">Automata</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="cell.js.html">cell.js</a>:<a href="cell.js.html#line28">28</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".Cell">
+      <a href="#params-Cell"><span class="type-signature">(static) </span>Cell</a><span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Cell}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Factory for creating Cell objects</p>
+</div>
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>const c = automata.Cell()</code></pre>
+
+    <pre class="prettyprint"><code>const c = automata.Cell(false)</code></pre>
+
+    <pre class="prettyprint"><code>const c = automata.Cell({
+  enabled: false
+})</code></pre>
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-Cell">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-Cell" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>Options for creating the cell. If
+passed a boolean, it is equivalent to passing the same boolean as the value
+of the <code>enabled</code> field</p>
+                <h6>Properties</h6>
+                <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enabled</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>Whether or not the cell is enabled</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Cell</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Factory for creating Cell objects\n * @memberof module:Automata\n * @param {boolean | Object} [options=false] Options for creating the cell. If\n * passed a boolean, it is equivalent to passing the same boolean as the value\n * of the `enabled` field\n * @param {boolean} [options.enabled=false] Whether or not the cell is enabled\n * @return {Cell}\n *\n * @example\n * const c = automata.Cell()\n *\n * @example\n * const c = automata.Cell(false)\n *\n * @example\n * const c = automata.Cell({\n *   enabled: false\n * })\n */","meta":{"range":[671,927],"filename":"cell.js","lineno":28,"columnno":0,"path":"/home/liam/dev/proj/automata.js/src","code":{"id":"astnode100000143","name":"Cell","type":"FunctionDeclaration","paramnames":["options"]},"vars":{"options":"module:Automata.Cell~options","undefined":null},"shortpath":"cell.js"},"description":"<p>Factory for creating Cell objects</p>","memberof":"module:Automata","params":[{"type":{"names":["boolean","Object"]},"optional":true,"defaultvalue":false,"description":"<p>Options for creating the cell. If\npassed a boolean, it is equivalent to passing the same boolean as the value\nof the <code>enabled</code> field</p>","name":"options","subparams":[{"type":{"names":["boolean"]},"optional":true,"defaultvalue":false,"description":"<p>Whether or not the cell is enabled</p>","name":"enabled"}]},null],"returns":[{"type":{"names":["Cell"]}}],"examples":[{"caption":"","code":"const c = automata.Cell()"},{"caption":"","code":"const c = automata.Cell(false)"},{"caption":"","code":"const c = automata.Cell({\n  enabled: false\n})"}],"name":"Cell","longname":"module:Automata.Cell","kind":"function","scope":"static","___id":"T000002R000025","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".Cell","signature":"<span class=\"signature\">(options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"> &rarr; {Cell}</span>","ancestors":["<a href=\"module-Automata.html\">Automata</a>."]}
+</pre>
+-->
+</div>
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="automaton.js.html">automaton.js</a>:<a href="automaton.js.html#line3">3</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id=".Automaton">
+  Automaton
+</h4>
+
+
+
+
+<div class="description">
+    <p>A stateful, immutable grid of cells, each with an enabled or disabled state</p>
+</div>
+
+
+<div>
+
+<!-- details.tmpl -->
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="automaton.js.html">automaton.js</a>:<a href="automaton.js.html#line3">3</a>
+  </code>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cells</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array.&lt;Cell>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The grid of cells</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>next</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">NextFunction</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function which returns the next state of the
+automaton based on the current state</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+            
+                <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="cell.js.html">cell.js</a>:<a href="cell.js.html#line1">1</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id=".Cell">
+  Cell
+</h4>
+
+
+
+
+<div class="description">
+    <p>A cell in the automaton</p>
+</div>
+
+
+<div>
+
+<!-- details.tmpl -->
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="cell.js.html">cell.js</a>:<a href="cell.js.html#line1">1</a>
+  </code>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enabled</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>If the cell is enabled/&quot;alive&quot;</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+            
+                <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="automaton.js.html">automaton.js</a>:<a href="automaton.js.html#line22">22</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id=".NextCellFunction">
+  NextCellFunction
+</h4>
+
+
+
+
+<div class="description">
+    <p>A function which produces the next state of a given cell</p>
+</div>
+
+
+<div>
+
+<!-- details.tmpl -->
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="automaton.js.html">automaton.js</a>:<a href="automaton.js.html#line22">22</a>
+  </code>
+</div>
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+            
+                <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="automaton.js.html">automaton.js</a>:<a href="automaton.js.html#line13">13</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id=".NextFunction">
+  NextFunction
+</h4>
+
+
+
+
+<div class="description">
+    <p>A function which takes the current state of the automaton and produces the
+updated state</p>
+</div>
+
+
+<div>
+
+<!-- details.tmpl -->
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="automaton.js.html">automaton.js</a>:<a href="automaton.js.html#line13">13</a>
+  </code>
+</div>
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Jun 21 2018 15:01:01 GMT-0400 (Eastern Daylight Time) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
