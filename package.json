@@ -14,7 +14,7 @@
     "build": "rimraf lib/ dist/ && node tasks/build.js",
     "test": "NODE_ENV=test mocha --require @babel/register 'test/**/*.spec.js'",
     "docs": "rimraf docs/ && jsdoc -c jsdoc.json",
-    "precommit": "npm run test && lint-staged && npm run docs && git add docs/"
+    "precommit": "npm run test && lint-staged"
   },
   "lint-staged": {
     "*.js": [
