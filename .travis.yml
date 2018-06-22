@@ -26,6 +26,7 @@ jobs:
       script: npm run build
       deploy:
         provider: npm
+        skip-cleanup: true
         email: peculiarexpression@gmail.com
         api_key: $NPM_TOKEN
         on:
