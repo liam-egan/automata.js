@@ -2,18 +2,30 @@ language: node_js
 node_js:
   - node
 
-script:
-  - npm run test
-  - npm run build
-after_success:
-  - npm run docs
+jobs:
+  include:
+    - stage: test
+      script: npm run test
+    - script: npm run build
 
-deploy:
-  - provider: pages
-    local-dir: docs/
-    skip-cleanup: true
-    github-token: $GH_TOKEN
-    keep-history: true
-    target-branch: gh-pages
-    on:
-      branch: master
+    - stage: deploy docs
+      if: branch = master
+      script: npm run docs
+      deploy:
+        provider: pages
+        local-dir: docs/
+        skip-cleanup: true
+        github-token: $GH_TOKEN
+        keep-history: true
+        target-branch: gh-pages
+        on:
+          branch: master
+
+    - stage: deploy npm
+      if: tag IS present AND branch = master
+      script: npm run build
+      deploy:
+        provider: npm
+        on:
+          branch: master
+          tags: true
