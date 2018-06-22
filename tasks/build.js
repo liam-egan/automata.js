@@ -22,7 +22,7 @@ const defaultPlugins = [
 
 const cjsBundle = {
   input: {
-    input: 'src/automata.js',
+    input: 'src/ca.js',
     plugins: [
       ...defaultPlugins,
       cleanup({
@@ -38,7 +38,7 @@ const cjsBundle = {
 
 const umdBundle = {
   input: {
-    input: 'src/automata.js',
+    input: 'src/ca.js',
     plugins: [
       ...defaultPlugins,
       minify({
@@ -49,7 +49,7 @@ const umdBundle = {
   output: {
     file: pkg.browser,
     format: 'umd',
-    name: 'automata',
+    name: 'ca',
   },
 }
 

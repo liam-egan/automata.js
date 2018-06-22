@@ -1,5 +1,5 @@
 /**
- * @module Automata
+ * @module Automaton
  */
 
 import Automaton from './automaton'

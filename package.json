@@ -1,10 +1,10 @@
 {
-  "name": "automata.js",
+  "name": "ca.js",
   "version": "1.0.0",
   "description": "A minimal JavaScript library for creating and manipulating cellular automata",
-  "main": "lib/automata.js",
-  "browser": "dist/automata.min.js",
-  "repository": "https://github.com/liam-egan/automata.js.git",
+  "main": "lib/ca.js",
+  "browser": "dist/ca.min.js",
+  "repository": "https://github.com/liam-egan/ca.js.git",
   "author": "Liam Egan",
   "license": "MIT",
   "scripts": {
