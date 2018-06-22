@@ -22,10 +22,12 @@ jobs:
           branch: master
 
     - stage: deploy npm
-      if: tag IS present AND branch = master
+      if: tag IS present
       script: npm run build
       deploy:
         provider: npm
+        email: peculiarexpression@gmail.com
+        api_key: $NPM_TOKEN
         on:
           branch: master
           tags: true
