@@ -1,6 +1,6 @@
 {
   "name": "ca.js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A minimal JavaScript library for creating and manipulating cellular automata",
   "main": "lib/ca.js",
   "browser": "dist/ca.min.js",
