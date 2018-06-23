@@ -1,7 +1,3 @@
-/**
- * @module Automaton
- */
-
 import Automaton from './automaton'
 import Cell from './cell'
 

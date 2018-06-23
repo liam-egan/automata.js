@@ -1,13 +1,16 @@
 /**
+ * Utilities related to a single cell in an automaton
+ * @module Cell
+ */
+
+/**
  * A cell in the automaton
- * @memberof module:Automata
  * @typedef {Object} Cell
  * @property {boolean} enabled If the cell is enabled/"alive"
  */
 
 /**
  * Factory for creating Cell objects
- * @memberof module:Automata
  * @param {boolean | Object} [options=false] Options for creating the cell. If
  * passed a boolean, it is equivalent to passing the same boolean as the value
  * of the `enabled` field

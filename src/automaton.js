@@ -1,8 +1,12 @@
 import Cell from './cell'
 
 /**
+ * Utilities related to automata
+ * @module Automaton
+ */
+
+/**
  * A stateful, immutable grid of cells, each with an enabled or disabled state
- * @memberof module:Automata
  * @typedef Automaton
  * @property {Array<Array<Cell>>} cells The grid of cells
  * @property {NextFunction} next A function which returns the next state of the
@@ -13,7 +17,6 @@ import Cell from './cell'
 /**
  * A function which takes the current state of the automaton and produces the
  * updated state
- * @memberof module:Automata
  * @function
  * @typedef NextFunction
  * @return {Automaton} An automaton with the updated state
@@ -21,7 +24,6 @@ import Cell from './cell'
 
 /**
  * A function which produces the next state of a given cell
- * @memberof module:Automata
  * @function
  * @typedef NextCellFunction
  * @param {number} x The x coord of the cell
@@ -33,7 +35,6 @@ import Cell from './cell'
 
 /**
  * Produces an automaton with the desired options
- * @memberof module:Automata
  * @param {Object} options The options
  * @param {NextCellFunction} options.produceNextCellState Function which is
  * applied to each of the cells in the grid and produces the next state of each
