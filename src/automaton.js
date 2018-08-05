@@ -8,6 +8,7 @@ import Cell from './cell'
 /**
  * A stateful, immutable grid of cells, each with an enabled or disabled state
  * @typedef Automaton
+ * @callback
  * @property {Array<Array<Cell>>} cells The grid of cells
  * @property {NextFunction} next A function which returns the next state of the
  * automaton based on the current state
@@ -17,14 +18,13 @@ import Cell from './cell'
 /**
  * A function which takes the current state of the automaton and produces the
  * updated state
- * @function
  * @typedef NextFunction
+ * @callback
  * @return {Automaton} An automaton with the updated state
  */
 
 /**
  * A function which produces the next state of a given cell
- * @function
  * @typedef NextCellFunction
  * @param {number} x The x coord of the cell
  * @param {number} y The y coord of the cell
