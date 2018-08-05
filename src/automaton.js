@@ -28,7 +28,7 @@ import Cell from './cell'
  * @param {number} y The y coord of the cell
  * @param {Automaton} automaton The complete automaton at the state before next
  * was called
- * @return {Cell} A cell with the updated state
+ * @return {boolean} The next `enabled` state of the cell
  */
 
 /**
