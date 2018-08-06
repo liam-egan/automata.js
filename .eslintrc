@@ -6,6 +6,10 @@ extends:
 env:
   es6: true
 
+plugins:
+  - prettier
+
 rules:
   no-var: error
   prefer-const: warn
+  prettier/prettier: error

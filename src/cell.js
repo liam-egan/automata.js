@@ -1,51 +1,48 @@
 /**
- * Utilities related to a single cell in an automaton
- * @module Cell
+ * A single cell in an automaton
  */
-
-/**
- * A cell in the automaton
- * @typedef {Object} Cell
- * @property {boolean} enabled If the cell is enabled/"alive"
- */
-
-/**
- * Factory for creating Cell objects
- * @param {boolean | Object} [options=false] Options for creating the cell. If
- * passed a boolean, it is equivalent to passing the same boolean as the value
- * of the `enabled` field
- * @param {boolean} [options.enabled=false] Whether or not the cell is enabled
- * @return {Cell}
- *
- * @example
- * const c = automata.Cell()
- *
- * @example
- * const c = automata.Cell(false)
- *
- * @example
- * const c = automata.Cell({
- *   enabled: false
- * })
- */
-function Cell(options = false) {
-  if (typeof options !== 'object') {
-    options = {
-      enabled: !!options,
+class Cell {
+  static get defaultConstructorOptions() {
+    return {}
+  }
+  /**
+   * @param {boolean|Object} [options=false] The options for creating the cell. If passed a
+   * boolean, it is equivalent to passing an object with an `enabled` field set
+   * to the same boolean
+   * @param {boolean} options.enabled The state of the cell, either enabled
+   * or disabled
+   *
+   * @example
+   * const c = new Cell()
+   *
+   * @example
+   * const c = new Cell(false)
+   *
+   * @example
+   * const c = new Cell({
+   *   enabled: false
+   * })
+   */
+  constructor(options = false) {
+    if (typeof options !== 'object') {
+      options = {
+        enabled: !!options,
+      }
     }
-  }
 
-  options = {
-    ...Cell.defaultOptions,
-    ...options,
-  }
+    options = {
+      ...Cell.defaultConstructorOptions,
+      ...options,
+    }
 
-  const { enabled } = options
-  return {
-    enabled: !!enabled,
+    /**
+     * Represents the current state of the cell. Enabled or disabled, alive or
+     * not alive
+     * @name Cell#enabled
+     * @type {boolean}
+     */
+    this.enabled = options.enabled
   }
 }
-
-Cell.defaultOptions = {}
 
 export default Cell
