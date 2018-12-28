@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>cell.js - Documentation</title>
+    <title>next-cell-state-functions/produceNextRule30CellState.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -34,7 +34,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">cell.js</h1>
+    <h1 class="page-title">next-cell-state-functions/produceNextRule30CellState.js</h1>
     
 
     <!--container.tmpl-->
@@ -46,54 +46,53 @@
 
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * A single cell in an automaton
+            <pre class="prettyprint source linenums"><code>import getCellNeighbors from '../util/getCellNeighbors'
+import Cell from '../cell'
+
+const rule30Offsets = [
+  {
+    row: -1,
+    column: -1,
+  },
+  {
+    row: -1,
+    column: 0,
+  },
+  {
+    row: -1,
+    column: 1,
+  },
+]
+
+/**
+ * Produces the next cell state based on the rules of Wolfram's Rule 30
+ * @memberOf NextCellStateFunctions
+ * @name produceNext30RuleCellState
+ * @type {NextCellStateFunction}
  */
-class Cell {
-  static get defaultConstructorOptions() {
-    return {}
-  }
-  /**
-   * @param {boolean|Object} [options=false] The options for creating the cell. If passed a
-   * boolean, it is equivalent to passing an object with an `enabled` field set
-   * to the same boolean
-   * @param {boolean} options.enabled The state of the cell, either enabled
-   * or disabled
-   *
-   * @example
-   * const c = new Cell()
-   *
-   * @example
-   * const c = new Cell(false)
-   *
-   * @example
-   * const c = new Cell({
-   *   enabled: false
-   * })
-   */
-  constructor(options = false) {
-    if (typeof options !== 'object') {
-      options = {
-        enabled: !!options,
-      }
-    }
+export default function produceNext30RuleCellState(
+  enabled,
+  automaton,
+  row,
+  column,
+) {
+  const neighbors = getCellNeighbors({
+    offsets: rule30Offsets,
+    cells: automaton.cells,
+    row,
+    column,
+    keepUndefinedNeighbors: true,
+  }).map(neighbor => (neighbor === undefined ? new Cell(false) : neighbor))
 
-    options = {
-      ...Cell.defaultConstructorOptions,
-      ...options,
-    }
+  const leftNeighbor = neighbors[0]
+  const centerNeighbor = neighbors[1]
+  const rightNeighbor = neighbors[2]
+  const newEnabledState =
+    enabled ||
+    !!(leftNeighbor.enabled ^ (centerNeighbor.enabled || rightNeighbor.enabled))
 
-    /**
-     * Represents the current state of the cell. Enabled or disabled, alive or
-     * not alive
-     * @name Cell#enabled
-     * @type {boolean}
-     */
-    this.enabled = options.enabled
-  }
+  return new Cell(newEnabledState)
 }
-
-export default Cell
 </code></pre>
         </article>
     </section>
