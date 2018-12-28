@@ -4,7 +4,7 @@
 
 A minimal JavaScript library for creating and manipulating cellular automata
 
-# Installation
+## Installation
 
 The recommended way of installing is via [npm][npm] or [yarn][yarn]:
 
@@ -27,7 +27,7 @@ import { Cell } from 'ca.js'
 If you're not using npm as your package manager for your project, there are
 other methods of installation listed below
 
-## UMD (browser global)
+### UMD (browser global)
 
 Through a CDN such as [jsdelivr][jsdelivr]
 
@@ -47,7 +47,27 @@ Or by directly including the file
 </script>
 ```
 
-# Documentation
+## Examples
+
+The two central objects are the Automaton and the Cell. The Automaton represents a cellular automaton, with a grid of Cell objects. A Cell can either be enabled or disabled. The Automaton can update the states of these Cells via the getNextState method, which is passed in as produceNextCellState when creating the Automaton object. This method should take the current state of a cell, potentially the cells around it or whatever factors you like, and returns a new Cell containing the updated state.
+
+There are also some built-in produceNextCellState functions that follow common rulesets, and there might be more in the future. Conway's Game of Life will probably be the most popular.
+
+Creating an Automaton which follows the rules of Conway's Game of Life
+
+```js
+import { Automaton, nextCellStateFunctions } from 'ca.js'
+
+const automaton = new Automaton({
+  produceNextCellState: nextCellStateFunctions.produceNextConwayCellState,
+  width: 10,
+  height: 10,
+})
+
+const automatonAfterOneCycle = automaton.getNextCellState()
+```
+
+## Documentation
 
 Documentation for this library can be found on the [GitHub Pages][docs-url]
 
