@@ -74,3 +74,6 @@ typings/
 
 test/
 src/
+jsdoc.json
+tasks/
+docs/
